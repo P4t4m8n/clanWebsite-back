@@ -95,11 +95,9 @@ async function add(user) {
     try {
         const existUser = await getByUsername(user.username)
         if (existUser) throw new Error('Username taken')
-
         const userToAdd = { ...user }
         const collection = await dbService.getCollection('user')
         await collection.insertOne(userToAdd)
-
         return userToAdd
     } catch (err) {
         loggerService.error('cannot insert user', err)

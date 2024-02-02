@@ -1,7 +1,8 @@
 import { loggerService } from "../../service/logger.service.js"
+import { authService } from "./auth.service.js"
 
 
-authS
+
 export async function login(req, res) {
     const { username, password } = req.body
     try {
@@ -39,13 +40,12 @@ export async function signup(req, res) {
 
         console.log('rank:', rank)
 
-      
+
         const account = await authService.signup(
             fullname,
             username,
             password,
             email,
-            position,
             imgUrl,
             rank,
             medals,
@@ -54,6 +54,7 @@ export async function signup(req, res) {
             msgs,
             units,
             officerNots,
+            position,
             createdAt)
 
         loggerService.debug(`auth.route - new account created: ` + JSON.stringify(account))

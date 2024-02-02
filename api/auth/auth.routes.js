@@ -8,3 +8,4 @@ authRoutes.post('/login', login)
 authRoutes.post('/signup', signup)
 authRoutes.post('/logout', logout)
 
+

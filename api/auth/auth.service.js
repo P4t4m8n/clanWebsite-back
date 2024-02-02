@@ -3,8 +3,6 @@ import bcrypt from 'bcrypt'
 import { userService } from '../user/user.service.js'
 import { loggerService } from '../../service/logger.service.js'
 
-
-
 export const authService = {
     signup,
     login,
@@ -28,18 +26,19 @@ async function login(username, password) {
 }
 
 async function signup(fullname, username, password,
-    email, imgUrl, rank, position, medals, movement, history,
-    msgs, units, officerNots, createdAt) {
-        const saltRounds = 10
-        console.log("rank:", rank)
+    email, imgUrl, rank, medals, movement, history,
+    msgs, units, officerNots, position, createdAt) {
+    const saltRounds = 10
+    console.log("rank:", rank)
 
     loggerService.debug(`auth.service - signup with username: ${username}`)
     if (!username || !password) throw new Error('Missing details')
 
     const hash = await bcrypt.hash(password, saltRounds)
     return userService.add({
-        fullname, username, password: hash, email, imgUrl, rank, position,
-        medals, movement, history, msgs, units, officerNots, createdAt
+        fullname, username, password: hash,
+        email, imgUrl, rank, medals, movement, history,
+        msgs, units, officerNots, position, createdAt
     })
 }
 
