@@ -30,26 +30,26 @@ export async function getEventById(req, res) {
 export async function addEvent(req, res) {
 
     const {
-        unitId,
+        unit,
         name,
         description,
-        startDate,
-        endDate,
+        start,
+        end,
         inviteList,
-        CreateBy,
+        createBy,
         isMandtory
     } = req.body
 
     try {
 
         const eventToSave = {
-            unitId,
+            unit,
             name,
             description,
-            startDate,
-            endDate,
+            start,
+            end,
             inviteList,
-            CreateBy,
+            createBy,
             isMandtory
         }
 
@@ -66,13 +66,13 @@ export async function addEvent(req, res) {
 export async function updateEvent(req, res) {
 
     const {
-        unitId,
+        unit,
         name,
         description,
-        startDate,
-        endDate,
+        start,
+        end,
         inviteList,
-        CreateBy,
+        createBy,
         isMandtory,
         _id
     } = req.body
@@ -82,13 +82,12 @@ export async function updateEvent(req, res) {
             unit,
             name,
             description,
-            startDate,
-            endDate,
+            start,
+            end,
             inviteList,
-            CreateBy,
-            isMandtory,
-            
-            createAt,
+            createBy,
+            isMandtory
+        
         }
         const eventId = _id
         const updatedEvent = await eventService.update(eventToSave, eventId)

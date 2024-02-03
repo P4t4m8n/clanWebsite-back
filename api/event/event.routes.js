@@ -6,9 +6,9 @@ import { addEvent, getEventById, getEvents, removeEvent, updateEvent } from './e
 export const eventRoutes = express.Router()
 
 eventRoutes.get('/', log, getEvents)
-eventRoutes.get('/:unitId', log, getEventById)
+eventRoutes.get('/:eventId', log, getEventById)
 eventRoutes.post('/edit', log, addEvent)
-eventRoutes.put('/edit/:unitId', log, updateEvent)
-eventRoutes.delete('/:unitId', log, removeEvent)
+eventRoutes.put('/edit/:eventId', log, updateEvent)
+eventRoutes.delete('/:eventId', log, removeEvent)
 
 

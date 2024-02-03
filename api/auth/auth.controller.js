@@ -20,6 +20,7 @@ export async function login(req, res) {
 }
 
 export async function signup(req, res) {
+    
     const {
         fullname,
         username,
@@ -36,11 +37,8 @@ export async function signup(req, res) {
         position,
         createdAt
     } = req.body
+
     try {
-
-        console.log('rank:', rank)
-
-
         const account = await authService.signup(
             fullname,
             username,

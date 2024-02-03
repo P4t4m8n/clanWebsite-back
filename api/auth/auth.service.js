@@ -28,8 +28,8 @@ async function login(username, password) {
 async function signup(fullname, username, password,
     email, imgUrl, rank, medals, movement, history,
     msgs, units, officerNots, position, createdAt) {
+        
     const saltRounds = 10
-    console.log("rank:", rank)
 
     loggerService.debug(`auth.service - signup with username: ${username}`)
     if (!username || !password) throw new Error('Missing details')
