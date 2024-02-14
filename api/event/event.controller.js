@@ -31,26 +31,26 @@ export async function addEvent(req, res) {
 
     const {
         unit,
-        name,
+        title,
         description,
         start,
         end,
         inviteList,
         createBy,
-        isMandtory
+        isMandatory 
     } = req.body
 
     try {
 
         const eventToSave = {
             unit,
-            name,
+            title,
             description,
             start,
             end,
             inviteList,
             createBy,
-            isMandtory
+            isMandatory 
         }
 
         const addedevent = await eventService.add(eventToSave)
@@ -67,26 +67,26 @@ export async function updateEvent(req, res) {
 
     const {
         unit,
-        name,
+        title,
         description,
         start,
         end,
         inviteList,
         createBy,
-        isMandtory,
+        isMandatory ,
         _id
     } = req.body
 
     try {
         const eventToSave = {
             unit,
-            name,
+            title,
             description,
             start,
             end,
             inviteList,
             createBy,
-            isMandtory
+            isMandatory 
         
         }
         const eventId = _id

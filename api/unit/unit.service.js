@@ -16,6 +16,7 @@ export const unitService = {
 async function query(filterSortBy = {}) {
     try {
         const criteria = _buildCriteria(filterSortBy)
+        
         const collection = await dbService.getCollection(DB_NAME)
         var units = await collection.find(criteria).toArray()
         return units
@@ -94,6 +95,9 @@ function _saveUnitsToFile() {
 }
 
 function _buildCriteria(filterSortBy) {
+    const { level } = filterSortBy
     const criteria = {}
+
+    if (level) criteria.level = { $regex: level, $options: 'i' }
     return criteria
 }

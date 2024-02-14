@@ -2,9 +2,9 @@ import { loggerService } from '../../service/logger.service.js'
 import { unitService } from './unit.service.js'
 
 export async function getUnits(req, res) {
-
+    const { level } = req.query
     try {
-        const filterSortBy = {}
+        const filterSortBy = {level}
         loggerService.debug('Getting units', filterSortBy)
         const units = await unitService.query(filterSortBy)
         res.json(units)
