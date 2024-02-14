@@ -1,2 +1,6 @@
 node_modules
-logs\backend
+
+logs/backend.log
+config/config.discord.json
+logs/backend.log
+logs/backend.log
