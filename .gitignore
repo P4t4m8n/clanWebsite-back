@@ -1,4 +1,4 @@
 node_modules
-
-config/discord.config.js
-config/discord.config.js
+ignore
+ignore/discord.config.js
+ignore/config.json
