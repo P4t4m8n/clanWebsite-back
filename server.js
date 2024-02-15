@@ -16,7 +16,7 @@ app.use(cookieParser())
 app.use(express.json())
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.resolve( 'public')))
+    app.use(express.static(path.resolve('public')))
 } else {
     const corsOptions = {
         origin: [
@@ -43,10 +43,13 @@ import { unitRoutes } from './api/unit/unit.routes.js'
 app.use('/api/unit', unitRoutes)
 
 import { eventRoutes } from './api/event/event.routes.js'
-app.use('/api/event',eventRoutes)
+app.use('/api/event', eventRoutes)
 
 import { setupSocketAPI } from './service/socket.service.js'
 setupSocketAPI(server)
+
+import { discordBotRoutes } from './api/discordBot/role/discord.routes.js'
+app.use('/api/discord/', discordBotRoutes)
 
 app.get('/**', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))
