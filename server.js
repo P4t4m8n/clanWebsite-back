@@ -48,7 +48,7 @@ app.use('/api/event', eventRoutes)
 import { setupSocketAPI } from './service/socket.service.js'
 setupSocketAPI(server)
 
-import { discordBotRoutes } from './api/discordBot/role/discord.routes.js'
+import { discordBotRoutes } from './api/discordBot/discord.routes.js'
 app.use('/api/discord/', discordBotRoutes)
 
 app.get('/**', (req, res) => {

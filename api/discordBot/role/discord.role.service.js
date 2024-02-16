@@ -1,9 +1,10 @@
 import { Client, GatewayIntentBits } from 'discord.js'
-import { getGuildId, getToken } from '../../../ignore/discordKey.js'
 import { loggerService } from '../../../service/logger.service.js'
 const client = new Client({ intents: [GatewayIntentBits.Guilds] })
-const TOKEN = getToken()
-const _GUILD_ID = getGuildId()
+import dotenv from 'dotenv';
+dotenv.config()
+const TOKEN = process.env.DISCORD_CLIENT_SECRET
+const _GUILD_ID = process.env.DISCORD_GUILD_ID
 
 client.login(TOKEN)
 

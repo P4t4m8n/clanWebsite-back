@@ -28,7 +28,7 @@ async function login(username, password) {
 async function signup(fullname, username, password,
     email, imgUrl, rank, medals, movement, history,
     msgs, units, officerNots, position, createdAt) {
-        
+
     const saltRounds = 10
 
     loggerService.debug(`auth.service - signup with username: ${username}`)
@@ -46,6 +46,7 @@ function getLoginToken(user) {
     const userInfo = {
         _id: user._id,
         username: user.username,
+        isAdmin: user.isAdmin
     }
     return cryptr.encrypt(JSON.stringify(userInfo))
 }

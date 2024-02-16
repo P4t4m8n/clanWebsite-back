@@ -1,7 +1,7 @@
 import { loggerService } from "../../service/logger.service.js"
 import { userService } from "./user.service.js"
 
-export async function getUser(req, res) {
+export async function getUserById(req, res) {
     try {
         const user = await userService.getById(req.params.id)
         res.send(user)
@@ -12,8 +12,11 @@ export async function getUser(req, res) {
 }
 
 export async function getUsers(req, res) {
+    const filterBy = {
+        txt: req.query?.txt || '',
+    }
     try {
-        const users = await userService.query()
+        const users = await userService.query(filterBy)
         res.send(users)
     } catch (err) {
         loggerService.error('Failed to get users', err)

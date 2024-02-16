@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "65bd261f02892496cf9486bf"
+  },
+  "fullname": "test",
+  "username": "test",
+  "password": "$2b$10$iHEBaxXSq5MKhE3dkhnUPOr8OLyzWFHogz.JfA7WCcRtwjdJyDKbu",
+  "email": "a@a",
+  "imgUrl": "/src/styles/img/patamon.png",
+  "rank": {
+    "type": "recruit",
+    "imgUrl": "/src/styles/img/recruit.svg",
+    "createdAt": {
+      "$numberLong": "1706894622569"
+    }
+  },
+  "medals": [],
+  "movement": [],
+  "history": [],
+  "msgs": [],
+  "units": [
+    {
+      "name": "Overwatch",
+      "unitId": "65bd1208f42924e035b147b9"
+    }
+  ],
+  "officerNots": [],
+  "position": "member",
+  "createdAt": {
+    "$numberLong": "1706894622569"
+  },
+  "isAdmin": true
+}]
